@@ -6,7 +6,7 @@ class HumanTest extends TestCase {
 
     public function testGetName() {
 
-        $hu = new Human("satoa");
+        $hu = new Human("sato");
         $this->assertEquals("sato", $hu->getName());
     }
 }
