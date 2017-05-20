@@ -1,0 +1,9 @@
+{
+    "require": {
+        "phpunit/phpunit": "6.1",
+        "phing/phing": "2.*",
+        "phpmd/phpmd": "*",
+        "sebastian/phpcpd": "*",
+        "phpdocumentor/phpdocumentor": "2.*"
+    }
+}
