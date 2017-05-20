@@ -4,7 +4,7 @@
   <property name="appdir"  value="${basedir}/app" />
   <property name="datadir" value="${basedir}/data" />
   <property name="logdir"  value="${datadir}/build/logs" />
-  <target name="build" depends="clean,prepare,phpmd,phpcpd,phpdoc,phpunit">
+  <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd,phpdoc,phpunit">
   </target>
   <target name="clean" description="clean">
     <delete dir="${logdir}" />
@@ -15,6 +15,13 @@
     <mkdir dir="${logdir}" />
     <mkdir dir="${datadir}/build/coverage" />
     <mkdir dir="${datadir}/build/phpdoc" />
+  </target>
+  <target name="phpcs" description="PHPCS">
+    <exec dir="${basedir}" executable="vendor/bin/phpcs" output="${logdir}/phpcs.log">
+        <arg line="--report=checkstyle" />
+        <arg line="--report-file=${logdir}/phpcs-report.xml" />
+        <arg line="${appdir}" />
+    </exec>
   </target>
   <target name="phpmd" description="PHPMD">
       <exec dir="${basedir}" executable="vendor/bin/phpmd" output="${logdir}/phpmd.log">
