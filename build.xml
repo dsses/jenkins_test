@@ -19,6 +19,7 @@
   <target name="phpcs" description="PHPCS">
     <exec dir="${basedir}" executable="vendor/bin/phpcs" output="${logdir}/phpcs.log">
         <arg line="--report=checkstyle" />
+        <arg line="--standard=Zend" />
         <arg line="--report-file=${logdir}/phpcs.xml" />
         <arg line="${appdir}" />
     </exec>
