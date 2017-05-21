@@ -1,7 +1,7 @@
 <?php
 class Human {
     private $_name;
-    public function Human($name) {
+    public function __construct($name) {
         $this->_name = $name;
     }
 
